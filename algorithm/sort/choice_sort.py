@@ -6,7 +6,5 @@ def choice_sort(input_array):
             if input_array[min_index] > input_array[j]:
                 min_index = j
         if min_index != i:
-            temp = input_array[i]
-            input_array[i] = input_array[min_index]
-            input_array[min_index] = temp
+            input_array[i],input_array[min_index] = input_array[min_index],input_array[i]
     return input_array

@@ -4,9 +4,7 @@ def bubble_sort(input_array):
         flag = True
         for i in xrange(len_array-times-1):
             if input_array[i] > input_array[i+1]:
-                temp = input_array[i]
-                input_array[i] = input_array[i+1]
-                input_array[i+1] = temp
+                input_array[i],input_array[i+1] = input_array[i+1],input_array[i]
                 flag = False
         if flag == True:
             break
