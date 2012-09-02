@@ -5,13 +5,14 @@
 # 牛顿法求平方根
 
 def sqrt(x):
+    def sqrt_iter(guess,x):
+        if(good_enough(guess,x)):
+            return guess
+        else:
+            return sqrt_iter(improve(guess,x),x)
+        
     return sqrt_iter(1.0,x)
 
-def sqrt_iter(guess,x):
-    if(good_enough(guess,x)):
-        return guess
-    else:
-        return sqrt_iter(improve(guess,x),x)
 
 def good_enough(guess,x):
     return abs(guess * guess - x) < 0.0001
