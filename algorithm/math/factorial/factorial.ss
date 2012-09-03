@@ -8,7 +8,7 @@
          (factorial (- n 1))
                 )))
 
-;(factorial 5)
+(factorial 5)
 
 (define (factorial-line n)
   (factorial-iter 1 1 n)
