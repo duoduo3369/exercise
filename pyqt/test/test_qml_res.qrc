@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/qml">
+        <file>TestRect.qml</file>
+        <file>images/logo_loading.gif</file>
+    </qresource>
+</RCC>

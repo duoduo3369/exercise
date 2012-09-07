@@ -3,14 +3,17 @@ def smallest_divisor(n):
     """最小因子 O(sqrt(n))"""
     def dividable(divisor,n):
         return n % divisor is 0
-    
+    def next_test(num):
+        if num is 2:
+            return 3
+        return num + 2
     def find_divisor(n,test_divisor):
         if test_divisor ** 2 > n:
             return n
         elif dividable(test_divisor,n):
             return test_divisor
         else:
-            return find_divisor(n,test_divisor+1)
+            return find_divisor(n,next_test(test_divisor))
             
     return find_divisor(n,2)
     
