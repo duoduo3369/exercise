@@ -1,10 +1,12 @@
+# coding=UTF8
+
 class Node(object):
     def __init__(self, value, next=None):
         self.value = value
         self.next = next
 
 class ListException(Exception):
-    pass
+    message = "列表元素为空"
 
 class List(object):
     def __init__(self):
