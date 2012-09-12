@@ -26,6 +26,7 @@ n = 80
 heap = random.sample(xrange(n),n)
 # heap_adjust(heap,len(heap)/2-1,len(heap))
 def heap_adjust(heap,pos,length):
+    # _shifup
     """ length 数组长度 最终调节范围是 pos~length-1
 
     """
@@ -47,10 +48,10 @@ def heap_adjust(heap,pos,length):
     return heap
 
 def heap_built(heap,length):
-    for i in xrange(length/2-1,-1,-1):
+    # heapify
+    for i in reversed(xrange(length/2)):
         heap_adjust(heap,i,length)
     return heap
-
 def heap_sort(heap):
     if len(heap) <= 1:
         return heap

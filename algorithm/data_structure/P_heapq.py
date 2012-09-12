@@ -1,4 +1,4 @@
-# -*- coding: latin-1 -*-
+# -*- coding: utf8 -*-
 
 """Heap queue algorithm (a.k.a. priority queue).
 
@@ -34,7 +34,7 @@ maintains the heap invariant!
 
 __about__ = """Heap queues
 
-[explanation by Fran�ois Pinard]
+[explanation by François Pinard]
 
 Heaps are arrays for which a[k] <= a[2*k+1] and a[k] <= a[2*k+2] for
 all k, counting elements from 0.  For the sake of comparison,
@@ -138,8 +138,13 @@ def cmp_lt(x, y):
     # In Py3.x, only __lt__ will be called.
     return (x < y) if hasattr(x, '__lt__') else (not y <= x)
 
+# _sift 筛
+# _siftdown(从下面往上面调节) 前面的堆(父堆)已是有序堆，
+# 将这个节点向父节点的方向查找位置，插入回去保证有序
+# _siftup(从上面往下面调节) 后面的子堆已是有序堆，道理同上
 def heappush(heap, item):
     """Push item onto heap, maintaining the heap invariant."""
+    # heap为有序堆
     heap.append(item)
     _siftdown(heap, 0, len(heap)-1)
 
@@ -149,6 +154,7 @@ def heappop(heap):
     if heap:
         returnitem = heap[0]
         heap[0] = lastelt
+        # 将最小的元素弹出后把最后元素放到堆定，调节堆。
         _siftup(heap, 0)
     else:
         returnitem = lastelt
@@ -185,6 +191,7 @@ def heapify(x):
     # or i < (n-1)/2.  If n is even = 2*j, this is (2*j-1)/2 = j-1/2 so
     # j-1 is the largest, which is n//2 - 1.  If n is odd = 2*j+1, this is
     # (2*j+1-1)/2 = j so j-1 is the largest, and that's again n//2-1.
+    # 从有叶子的堆开始调节，从下向上，从右向左
     for i in reversed(xrange(n//2)):
         _siftup(x, i)
 
@@ -238,6 +245,7 @@ def nsmallest(n, iterable):
 # is the index of a leaf with a possibly out-of-order value.  Restore the
 # heap invariant.
 def _siftdown(heap, startpos, pos):
+    # 已经是有序堆，插入时只需将最后一个节点沿父节点上升找到对应位置插入即可。
     newitem = heap[pos]
     # Follow the path to the root, moving parents down until finding a place
     # newitem fits.
@@ -291,6 +299,7 @@ def _siftdown(heap, startpos, pos):
 # for sorting.
 
 def _siftup(heap, pos):
+    # 调节从pos开始的子堆为排序堆(pos后面的子堆已经有序)
     endpos = len(heap)
     startpos = pos
     newitem = heap[pos]
