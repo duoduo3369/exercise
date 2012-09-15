@@ -1,6 +1,16 @@
+# coding=UTF8
+
+
 import sys
 from pprint import pprint
 from double_array import double_array
+
+##在n*n方陈里填入1,2,...,n*n,要求填成蛇形。例如n=4时方陈为：
+##10 11 12 1
+##9 16 13 2
+##8 15 14 3
+##7 6 5 4
+
 def snake_array(n):    
     array = double_array(n,n)
     def init_row_col(n):
