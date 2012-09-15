@@ -89,5 +89,5 @@ class HeapSortTest(unittest.TestCase):
         self.assertEqual(heap_sort(test_list),test_list_copy)
     
 
-def main():
+def test():
     unittest.main()
