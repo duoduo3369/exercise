@@ -68,6 +68,44 @@ class FullPermutation(object):
         result = self.result
         for r in result:
             print r
+
+class OnlyFullPermutation(FullPermutation):
+    def __init__(self):
+        super(OnlyFullPermutation,self).__init__()
+    def permutation(self,List,first,last):
+        ## 递归解法，怎么返回生成list而不是打印???因为最后还有一个交换
+        ## 面向对象
+        """产生从first到last的全排列
+            R = {r1,r2,r3,...,rn}
+            Ri = R - {ri}
+            1、n=1 Perm(R) = r
+            ## 如果只有一个元素，则list就是全排列 
+            2、n>1 Perm(R) = (ri)(Perm(Ri))        
+            ## 否则排列就是([取出一个元素][list剩下的元素])
+        """
+        def __is_swap(L,from_index,to_index):
+            for i in xrange(from_index,to_index):
+                if L[i] == L[to_index]:
+                    return False
+            return True
+        def __swap(L,from_index,to_index):
+            L[from_index],L[to_index] = L[to_index],L[from_index]
+            return L
+
+        if first is last:
+            #return List        
+            #print List
+            self.result.append(copy(List))
+        else:
+            for i in xrange(first,last):
+                if __is_swap(List,first,i):
+                    __swap(List,first,i)
+                    # 交换第一个和第i个，然后使用k+1~last-->Ri
+                    self.permutation(List,first+1,last)
+                    __swap(List,first,i)
+                    # 换回来，保持数组不变性，
+                    #保证每次交换的第一个函数按照 Ri = R - {ri}的顺序生成Ri
+
 def usage(l):       
     #l = range(4)
     full_permutation = FullPermutation()
@@ -78,4 +116,12 @@ def usage(l):
     print cut_star_line
     full_permutation.print_result()
 
-
+def usage_2(l):       
+    #l = range(4)
+    full_permutation = OnlyFullPermutation()
+    full_permutation.permutation(l,0,len(l))
+    many = len(full_permutation.result)
+    cut_star_line = '*' * len(l) * 3
+    print 'has %s results' % (many)
+    print cut_star_line
+    full_permutation.print_result()
