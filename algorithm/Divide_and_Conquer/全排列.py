@@ -82,8 +82,15 @@ class OnlyFullPermutation(FullPermutation):
             ## 如果只有一个元素，则list就是全排列 
             2、n>1 Perm(R) = (ri)(Perm(Ri))        
             ## 否则排列就是([取出一个元素][list剩下的元素])
+            去掉重复的规则：去重的全排列就是从第一个数字起，
+            每个数分别与它后面非重复出现的数字交换
         """
         def __is_swap(L,from_index,to_index):
+            """
+            如果说从[i,j)中有和j相同的元素，那么
+            例如 14234
+
+            """
             for i in xrange(from_index,to_index):
                 if L[i] == L[to_index]:
                     return False

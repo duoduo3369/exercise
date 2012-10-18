@@ -11,5 +11,8 @@ int main()
     printf("********\n");
     SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY |
     FOREGROUND_RED | FOREGROUND_GREEN);
+    printf("=========\n");
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),FOREGROUND_INTENSITY |
+    FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
     return 0;
 }
