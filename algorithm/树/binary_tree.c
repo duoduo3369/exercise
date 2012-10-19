@@ -9,13 +9,19 @@ typedef struct{
     struct BinaryNode *left_child;
     struct BinaryNode *right_child;
 }BinaryNode,*BinaryTree;
+
+void setNode(BinaryNode* node,Type data,BinaryNode *left_child,BinaryNode *right_child)
+{
+    node->data = data;
+    node->left_child = left_child;
+    node->right_child = right_child;
+}
 BinaryNode* newNode()
 {
     BinaryNode* node = (BinaryNode*)malloc(sizeof(BinaryNode));
     if(node)
     {
-        node->left_child = NULL;
-        node->right_child = NULL;
+        setNode(node,-1,NULL,NULL);
     }
     return node;
 }
@@ -23,16 +29,10 @@ void freeNode(BinaryNode* node)
 {
     free(node);
 }
-void setNode(BinaryNode* node,Type data,BinaryNode *left_child,BinaryNode *right_child)
-{
-    node->data = data;
-    node->left_child = left_child;
-    node->right_child = right_child;
-}
 void printNode(BinaryNode* node)
 {
-    printf("data:%d left_child_pointer:%p right_child_pointer:%p\n",
-           node->data,node->left_child,node->right_child
+    printf("data:%d self_p:%p l_child_p:%p r_child_p:%p\n",
+           node->data,node,node->left_child,node->right_child
            );
 }
 int printf_middle(Type element,int width,char fill)
@@ -67,19 +67,4 @@ void print_tree(Type tree[],int size,int total_width,char fill)
     }
 
 }
-char* char_in_center(Type element,char fill,int width)
-{
-    char *string = NULL;
-    int i;
-    for(i = 0; i < width/2; ++i)
-    {
-        string[i] = fill;
-    }
-    string[i++] = element;
-    for(; i < width; ++i)
-    {
-        string[i] = fill;
-    }
-    string[i] = '\0';
-    return string;
-}
+

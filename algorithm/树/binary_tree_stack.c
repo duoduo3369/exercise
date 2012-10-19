@@ -67,3 +67,7 @@ BinaryNode* popBinaryTreeStack(BinaryTreeStack* stack)
     stack->top_index--;
     return top;
 }
+BinaryNode* getBinaryTreeStackTop(BinaryTreeStack* stack)
+{
+    return stack->list[stack->top_index];
+}
