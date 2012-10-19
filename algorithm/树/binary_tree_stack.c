@@ -57,13 +57,13 @@ int pushBinaryTreeStack(BinaryTreeStack* stack,BinaryNode* node)
     return TRUE;
 
 }
-BinaryTreeStack* popBinaryTreeStack(BinaryTreeStack* stack)
+BinaryNode* popBinaryTreeStack(BinaryTreeStack* stack)
 {
     if(isBinaryTreeStackEmpty(stack))
     {
         return NULL;
     }
-    BinaryTreeStack* top = stack->list[stack->top_index];
+    BinaryNode* top = stack->list[stack->top_index];
     stack->top_index--;
     return top;
 }

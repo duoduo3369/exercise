@@ -8,10 +8,15 @@
 #include "binary_tree_stack.c"
 
 void test_binary_tree();
+void test_binary_tree_print();
 void test_binary_tree_stack();
+void test_binary_tree_stack_push_pop_many();
+void test_binary_tree_stack_push_pop_one();
+
 int main()
 {
-    test_binary_tree_stack_push_pop_many();
+    test_binary_tree_print();
+
 //    test_binary_tree_stack();
     return 0;
 }
@@ -32,6 +37,12 @@ void test_binary_tree()
     printf("node_1 pointer:%p\n",node_1);
     printf("node_2 pointer:%p\n",node_2);
 }
+void test_binary_tree_print()
+{
+    static Type tree[8] = {1,2,3,4,5,6,7,8};
+    print_tree(tree,8,36,' ');
+
+}
 void test_binary_tree_stack_push_pop_one()
 {
     BinaryTreeStack* stack = initBinaryTreeStack();
@@ -51,10 +62,13 @@ void test_binary_tree_stack_push_pop_one()
     pushBinaryTreeStack(stack,node_2);
     pushBinaryTreeStack(stack,node_3);
     pushBinaryTreeStack(stack,node_4);
+    printf("node number:%d\n",binaryTreeStackNodeNumber(stack));
     printNode(popBinaryTreeStack(stack));
     printNode(popBinaryTreeStack(stack));
     printNode(popBinaryTreeStack(stack));
     printNode(popBinaryTreeStack(stack));
+    printf("node number:%d\n",binaryTreeStackNodeNumber(stack));
+
     freeNode(node_1);
     freeNode(node_2);
     freeNode(node_3);
