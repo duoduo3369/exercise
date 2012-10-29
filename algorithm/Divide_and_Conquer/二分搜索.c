@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<windows.h>
-#define N 500
+#define N 100
 int binary_search(int *array,int key,int len)
 {
     int mid,low = 0,high = len;
