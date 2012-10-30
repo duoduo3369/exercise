@@ -27,13 +27,14 @@ void print_array(TYPE *array,int length)
 }
 void merge(TYPE *array,TYPE *tempArray,int start,int middle,int end)
 {
+    /**
+    要求：array的start~middle以升序排序，array的middle+1~end已升序排序
+    */
     int a_index = start;
     int t_index = middle + 1;
     int i = 0;
-//    printf("%d %d %d\n",a_index,middle,t_index);
     while(a_index <= middle && t_index <= end)
     {
-//        printf("inner left %d right %d == ",array[a_index],array[t_index]);
         if(array[a_index] >= array[t_index])
         {
             tempArray[i++] = array[t_index++];
@@ -42,7 +43,6 @@ void merge(TYPE *array,TYPE *tempArray,int start,int middle,int end)
         {
             tempArray[i++] = array[a_index++];
         }
-//        printf("temparray %d\n",tempArray[i-1]);
     }
     while(a_index <= middle)
     {
@@ -52,12 +52,7 @@ void merge(TYPE *array,TYPE *tempArray,int start,int middle,int end)
     {
         tempArray[i++] = array[t_index++];
     }
-//    printf("============\n");
-//    print_array(tempArray,N);
-//    print_array(array,N);
-//    printf("============\n");
     memcpy(array+start,tempArray,sizeof(TYPE)*(end-start+1));
-//    print_array(array,N);
 }
 void merge_sort(TYPE *array,int start,int end)
 {
