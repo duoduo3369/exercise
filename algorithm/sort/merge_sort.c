@@ -1,13 +1,13 @@
 #include<stdio.h>
 #include <string.h>
-#define TYPE int
+#include "print_array.h"
 #define N 20
 void merge_sort(TYPE *array,int start,int end);
 void merge(TYPE *array,TYPE *tempArray,int start,int middle,int end);
-void print_array(TYPE *array,int length);
+
 int main()
 {
-    static TYPE A[N] = {5,6,7,8,9,2,3,4,5,6,1,2,3,4,5,6};
+    static TYPE A[] = {5,6,7,8,9,2,3,4,5,6,1,2,3,4,5,6};
     static temp[N];
     int length = 16;
     int start = 0,end = length-1;
@@ -16,20 +16,12 @@ int main()
     print_array(A,length);
     return 0;
 }
-void print_array(TYPE *array,int length)
-{
-    int i;
-    for(i = 0; i < length; ++i)
-    {
-        printf("%d ",array[i]);
-    }
-    printf("\n");
-}
+
 void merge(TYPE *array,TYPE *tempArray,int start,int middle,int end)
 {
     /**
-    要求：array的start~middle以升序排序，array的middle+1~end已升序排序
-    */
+      * 要求：array的start~middle以升序排序，array的middle+1~end已升序排序
+      **/
     int a_index = start;
     int t_index = middle + 1;
     int i = 0;

@@ -3,6 +3,14 @@ import unittest
 from copy import copy
 
 def partition(L,low,high):
+    """
+    1、初始partition_index为low，iter为初始partition_index+1
+    2、从(0,partition_index]为比base小的数
+    3、当L[iter_index] < base的时候，则partition_index+1，使(0,partition_index]增长1
+    4、交换L[iter_index] 和 L[partition_index]使数组依然满足步骤2的性质
+    5、遍历,直到iter再小于high
+    6、最后将L[0]与L[partition_index]交换，使L[0,partition_index]都<=L[partition_index]
+    """
     if high - low <= 1:
         return low
     x = L[low]
