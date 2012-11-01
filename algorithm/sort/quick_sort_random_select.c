@@ -7,12 +7,16 @@
 int partition(TYPE *array,int low,int high);
 int getRandomIndex(low,high);
 void quickSort(TYPE *array,int start,int end);
+TYPE randomized_select(TYPE *array,int low,int high,int rank);
 int main()
 {
 
     TYPE array[] = {5,2,34,5,-1,0,-5,9,123,6,4,3,9,0};
+    int select = randomized_select(array,0,13,5);
     quickSort(array,0,13);
     print_array(array,14);
+    int p = array[4];
+    printf("%d == %d ?",select,p);
 
     return 0;
 }
@@ -78,4 +82,23 @@ void quickSort(TYPE *array,int start,int end)
         quickSort(array,start,p);
         quickSort(array,p+1,end);
     }
+}
+TYPE randomized_select(TYPE *array,int low,int high,int rank)
+{
+    if(low == high)
+    {
+        return array[low];
+    }
+    int p = partition(array,low,high);
+    int p_rank = p - low + 1;
+    if(p_rank >= rank)
+    {
+        return randomized_select(array,low,p,rank);
+    }
+    else
+    {
+        return randomized_select(array,p+1,high,rank-p_rank);
+    }
+
+
 }
