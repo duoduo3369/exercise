@@ -6,6 +6,7 @@ class CMyPlane :
 {
 public:
     CMyPlane(void);
+    CMyPlane(CPoint pos);
     ~CMyPlane(void);
     BOOL Draw(CDC* pDC,BOOL bPause);
 
@@ -19,7 +20,11 @@ public:
 	{
 		return m_nHorMotion;
 	}
-
+    int GetV() const
+    {
+        return m_V;
+    }
+    
 	void SetVerMotion(int nMotion)
 	{
 		m_nVerMotion = nMotion;
@@ -28,10 +33,15 @@ public:
 	{
 		return m_nVerMotion;
 	}
-
+    void HorMove();
+    void VerMove();
 	CRect GetRect()
 	{
-		return CRect(m_ptPos,CPoint(m_ptPos.x+PLANE_WIDTH,m_ptPos.y+PLANE_HEIGHT));
+		CRect rect = CRect(m_ptPos,CPoint(m_ptPos.x+PLANE_WIDTH,m_ptPos.y+PLANE_HEIGHT));
+        rect.left -= 3;
+        rect.right += 3;
+        rect.top -= 2;
+        return rect;
 	}
 
 	//是否可以开火发射导弹
@@ -46,5 +56,6 @@ private:
 	int    m_nHorMotion;//飞机水平运行方向0->静止，1->右 -1->左
 	int    m_nVerMotion;//飞机垂直运行方向0->静止，1->上 -1->下
 	int    m_nWait;//发射延时
+    int    m_V; //飞行速度
 
 };

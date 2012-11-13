@@ -3,7 +3,8 @@
 
 
 #pragma once
-#include<vector> 
+//#include<vector> 
+#include <deque>
 #include "MyPlane.h"
 #include "Enemy.h"
 
@@ -18,8 +19,8 @@ protected: // 仅从序列化创建
 
 // 属性
 public:
-    vector<CEnemy> enemyArray;
-    CMyPlane myPlane;
+    deque<CEnemy*> enemyArray;
+    CMyPlane *myPlane;
 // 操作
 public:
 

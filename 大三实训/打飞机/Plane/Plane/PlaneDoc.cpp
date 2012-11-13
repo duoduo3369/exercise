@@ -2,8 +2,9 @@
 //
 
 #include "stdafx.h"
-#include "Plane.h"
 
+#include "Plane.h"
+#include "Util.h"
 #include "PlaneDoc.h"
 
 #ifdef _DEBUG
@@ -22,9 +23,8 @@ END_MESSAGE_MAP()
 // CPlaneDoc ¹¹Ôì/Îö¹¹
 
 CPlaneDoc::CPlaneDoc()
-{
-    //this->enemyArray.push_back(CEnemy(CPoint(0,0)));
-    
+{   
+
 }
 
 CPlaneDoc::~CPlaneDoc()

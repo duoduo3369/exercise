@@ -1,54 +1,79 @@
 #include "StdAfx.h"
 #include "public.h"
 
-int Move_Width = 32;
-int Move_Height = 24;
 
 CMyPlane::CMyPlane(void)
 {
 }
+CMyPlane::CMyPlane(CPoint pos):
+    m_nHorMotion(STATIC_MOVE),m_nVerMotion(STATIC_MOVE),m_V(3)
+{
+    m_ptPos = pos;
+}
+
 
 CMyPlane::~CMyPlane(void)
 {
+
 }
 
+void CMyPlane::HorMove()
+{
+    switch(m_nHorMotion)
+    {
+        case STATIC_MOVE:
+            {
+                break;
+            }
+        case LEFT_MOVE:
+            {
+                m_ptPos.x -= m_V;
+                break;
+            }
+        case RIGHT_MOVE:
+            {
+                m_ptPos.x += m_V;
+                break;            
+            }
+    }    
 
+}
+void CMyPlane::VerMove()
+{
+    switch(m_nVerMotion)
+    {
+        case STATIC_MOVE:
+            {
+                break;
+            }
+        case UP_MOVE:
+            {
+                m_ptPos.y -= m_V;
+                break;
+            }
+        case DOWN_MOVE:
+            {
+                m_ptPos.y += m_V;
+                break;            
+            }
+    }
+}
 
 BOOL CMyPlane::Draw(CDC* pDC,BOOL bPause)
 {
-    //CPlaneDoc* pDoc = GetDocument();
-	//ASSERT_VALID(pDoc);
-	//if (!pDoc)
-	//	return FALSE;
+    if(!pDC)
+    {
+        return FALSE;
+    }
+    CDC memDC;
+	memDC.CreateCompatibleDC(pDC);
+	CBitmap bmpMem;
+	bmpMem.LoadBitmapW(IDB_MYPLANE);
+	CBitmap *pbmpold(memDC.SelectObject(&bmpMem));
+    memDC.TransparentBlt(m_ptPos.x,m_ptPos.y,PLANE_WIDTH,PLANE_HEIGHT,&memDC,0,0,PLANE_WIDTH,PLANE_HEIGHT,RGB(0,0,0));
+	pDC->TransparentBlt(m_ptPos.x,m_ptPos.y,PLANE_WIDTH,PLANE_HEIGHT,&memDC,0,0,PLANE_WIDTH,PLANE_HEIGHT,RGB(0,0,0));
 
-	// TODO: 在此处为本机数据添加绘制代码
-    /*
-    
-    for(vector<CPoint>::iterator it = pDoc->pointArray.begin(); it != pDoc->pointArray.end(); ++it)
-    {
-        pDC->Rectangle(it->x,it->y,it->x+Move_Width,it->y+Move_Height);
-    }
-    if(!pDoc->pointArray.empty())
-    {
-        CBrush brush(RGB(0,0,0));
-        RECT lastRect = GetLastRect(pDoc);
-        pDC->FillRect(&lastRect,&brush);
-        
-    }
-    */
+
     return TRUE;
 }
 
-/*
-RECT GetLastRect(CPlaneDoc* pDoc)
-{
-        RECT lastRect;
-        int lastRectIndex = pDoc->pointArray.size()-1;        
-        CPoint lastRectOrign(pDoc->pointArray[lastRectIndex]);
-        lastRect.left = lastRectOrign.x;
-        lastRect.right = lastRect.left + Move_Width;
-        lastRect.top = lastRectOrign.y;
-        lastRect.bottom = lastRect.top + Move_Height;
-        return lastRect;
-}
-*/

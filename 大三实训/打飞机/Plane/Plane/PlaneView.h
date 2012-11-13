@@ -46,7 +46,17 @@ protected:
 public:
 //    afx_msg void OnTimer(UINT_PTR nIDEvent);
 //    afx_msg void OnDestroy();
+//    afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
     afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
+    afx_msg void OnTimer(UINT_PTR nIDEvent);
+    afx_msg void OnDestroy();
+    virtual void OnInitialUpdate();
+    CDC* pdc;
+//    afx_msg BOOL OnEraseBkgnd(CDC* pDC);
+    CDC* m_pMemDC;
+    CBitmap* m_pMemBitmap;
+    CBitmap* m_pOldBitmap;
+    afx_msg BOOL OnEraseBkgnd(CDC* pDC);
 };
 
 #ifndef _DEBUG  // PlaneView.cpp 中的调试版本

@@ -1,7 +1,7 @@
 #pragma once
-
+#include "afx.h"
 //游戏对象的父类
-class CGameObject //: public CObject
+class CGameObject : public CObject
 {
 public:
 

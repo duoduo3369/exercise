@@ -1,38 +1,17 @@
 #include "StdAfx.h"
 #include "Enemy.h"
+#include "Resource.h" 
 //#include "GameObject.h"
 CEnemy::CEnemy(CPoint pos):
-    move_leftright_gap(3.2),move_updown_gap(2.4)
+    move_leftright_gap(3.2),move_updown_gap(2.4),m_V(2),
+        m_n_updown_Motion(1)
 {
     m_ptPos = pos;
-}
-CEnemy::CEnemy(const CEnemy& enemy)
-{
-    m_Images = enemy.m_Images;
-    m_nImgIndex = enemy.m_nImgIndex;
-    m_nWait = enemy.m_nWait;
-    m_ptPos = enemy.m_ptPos;
-    m_V = enemy.m_V;
-    move_leftright_gap = enemy.move_leftright_gap;
-    move_updown_gap = enemy.move_updown_gap;
-    m_nMotion = enemy.m_nMotion;
-}
-
-CEnemy& CEnemy::operator = (const CEnemy &enemy)
-{
-    m_Images = enemy.m_Images;
-    m_nImgIndex = enemy.m_nImgIndex;
-    m_nWait = enemy.m_nWait;
-    m_ptPos = enemy.m_ptPos;
-    m_V = enemy.m_V;
-    move_leftright_gap = enemy.move_leftright_gap;
-    move_updown_gap = enemy.move_updown_gap;
-    m_nMotion = enemy.m_nMotion;
-    return *this;
 }
 
 CEnemy::~CEnemy(void)
 {
+    
 }
 BOOL CEnemy::Draw(CDC* pDC,BOOL bPause)
 {
@@ -41,6 +20,44 @@ BOOL CEnemy::Draw(CDC* pDC,BOOL bPause)
         return FALSE;
     }
 
-    pDC->Rectangle(m_ptPos.x,m_ptPos.y,m_ptPos.x+PLANE_WIDTH,m_ptPos.y+PLANE_HEIGHT);
+    CDC memDC;
+	memDC.CreateCompatibleDC(pDC);
+	CBitmap bmpMem;
+    
+	bmpMem.LoadBitmapW(IDB_ENEMY);
+	CBitmap *pbmpold(memDC.SelectObject(&bmpMem));
+    memDC.TransparentBlt(m_ptPos.x,m_ptPos.y,ENEMY_HEIGHT,ENEMY_HEIGHT,&memDC,0,0,ENEMY_HEIGHT,ENEMY_HEIGHT,RGB(0,0,0));
+	pDC->TransparentBlt(m_ptPos.x,m_ptPos.y,ENEMY_HEIGHT,ENEMY_HEIGHT,&memDC,0,0,ENEMY_HEIGHT,ENEMY_HEIGHT,RGB(0,0,0));
+
+
     return TRUE;
+}
+
+void CEnemy::Setm_V(int V)
+{
+    m_V = V;
+}
+int CEnemy::Getm_V()
+{
+    return m_V;
+}
+
+void CEnemy::LevelUp(int V)//升级速度增加V
+{
+    m_V += V;
+}
+
+void CEnemy::Move()
+{
+    //if(m_n_updown_Motion == 1)
+    switch(m_n_updown_Motion)
+    {
+        case 1: //向下
+            m_ptPos.y += m_V;
+            break;
+        case 0: //停止
+            break;
+        case -1: //向上
+            break;
+    }
 }
