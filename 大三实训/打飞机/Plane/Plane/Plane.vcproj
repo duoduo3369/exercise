@@ -132,6 +132,7 @@
 				UsePrecompiledHeader="2"
 				WarningLevel="3"
 				DebugInformationFormat="3"
+				EnablePREfast="true"
 			/>
 			<Tool
 				Name="VCManagedResourceCompilerTool"
@@ -454,6 +455,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\res\icon1.ico"
+				>
+			</File>
+			<File
 				RelativePath="..\image\life.bmp"
 				>
 			</File>
@@ -467,6 +472,10 @@
 			</File>
 			<File
 				RelativePath="..\image\peach.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\plane.bmp"
 				>
 			</File>
 			<File

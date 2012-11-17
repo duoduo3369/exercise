@@ -20,9 +20,9 @@
 #define BOMB_MID_LEFT                   4
 #define BOMB_MID_RIGHT                  5
 #define OUT_STRINGS                     5
+#define GRADE_BALL                      5
 #define BOMB_BALL_LEFT                  6
 #define BOMB_BALL_RIGHT                 7
-#define GRADE_BALL                      5
 #define MYPLANE_BOMBS                   8
 #define IDB_SPEED_SHORTAGE              9
 #define BALL_ARRAY_LIMIT                14
@@ -81,7 +81,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        158
+#define _APS_NEXT_RESOURCE_VALUE        160
 #define _APS_NEXT_COMMAND_VALUE         32771
 #define _APS_NEXT_CONTROL_VALUE         1000
 #define _APS_NEXT_SYMED_VALUE           101

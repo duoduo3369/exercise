@@ -201,10 +201,9 @@ BEGIN
         BLOCK "080403a8"
         BEGIN
             VALUE "CompanyName", "DUODUO"
-            VALUE "FileDescription", "TODO: <文件说明>"
             VALUE "FileVersion", "1.0.0.1"
             VALUE "InternalName", "Plane.exe"
-            VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。"
+            VALUE "LegalCopyright", "TODO: (C) DUODUO 保留所有权利。"
             VALUE "OriginalFilename", "Plane.exe"
             VALUE "ProductName", "三国杀版打飞机"
             VALUE "ProductVersion", "1.0.0.1"
