@@ -81,6 +81,26 @@ IDR_PlaneTYPE           ICON                    "res\\PlaneDoc.ico"
 IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
 IDB_ENEMY               BITMAP                  "C:\\Documents and Settings\\k01\\My Documents\\GitHub\\exercise\\大三实训\\打飞机\\C++实训说明\\plane\\enemy.bmp"
 IDB_MYPLANE             BITMAP                  "C:\\Documents and Settings\\k01\\My Documents\\GitHub\\exercise\\大三实训\\打飞机\\C++实训说明\\plane\\me.bmp"
+IDB_BOMB                BITMAP                  "..\\image\\bomb.bmp"
+IDB_BALL                BITMAP                  "..\\image\\ball.BMP"
+IDB_EXPLOSION           BITMAP                  "C:\\Documents and Settings\\k01\\My Documents\\GitHub\\exercise\\大三实训\\打飞机\\C++实训说明\\plane\\explosion.BMP"
+IDB_BACK_SHU            BITMAP                  "C:\\Documents and Settings\\k01\\My Documents\\GitHub\\exercise\\大三实训\\打飞机\\Plane\\image\\shu.bmp"
+IDB_BACK_WEI            BITMAP                  "C:\\Documents and Settings\\k01\\My Documents\\GitHub\\exercise\\大三实训\\打飞机\\Plane\\image\\wei.bmp"
+IDB_BACK_WU             BITMAP                  "C:\\Documents and Settings\\k01\\My Documents\\GitHub\\exercise\\大三实训\\打飞机\\Plane\\image\\wu.bmp"
+IDB_LIFE                BITMAP                  "C:\\Documents and Settings\\k01\\My Documents\\GitHub\\exercise\\大三实训\\打飞机\\Plane\\image\\life.bmp"
+IDB_SUPERBOMB           BITMAP                  "C:\\Documents and Settings\\k01\\My Documents\\GitHub\\exercise\\大三实训\\打飞机\\Plane\\image\\superbomb.bmp"
+IDB_ARCHERY_ATTCK       BITMAP                  "C:\\Documents and Settings\\k01\\My Documents\\GitHub\\exercise\\大三实训\\打飞机\\Plane\\image\\archery_attack.bmp"
+IDB_PEACH               BITMAP                  "C:\\Documents and Settings\\k01\\My Documents\\GitHub\\exercise\\大三实训\\打飞机\\Plane\\image\\peach.bmp"
+IDB_ARCHERY_BIG         BITMAP                  "C:\\Documents and Settings\\k01\\My Documents\\GitHub\\exercise\\大三实训\\打飞机\\Plane\\image\\archery_attck_big.bmp"
+IDB_BOMB_UP_RIGHT       BITMAP                  "C:\\Documents and Settings\\k01\\My Documents\\GitHub\\exercise\\大三实训\\打飞机\\Plane\\image\\bomb_right.bmp"
+IDB_BOMB_LEFT           BITMAP                  "C:\\Documents and Settings\\k01\\My Documents\\GitHub\\exercise\\大三实训\\打飞机\\Plane\\image\\bomb_left.bmp"
+IDB_BOMB_LEVEL_UP       BITMAP                  "C:\\Documents and Settings\\k01\\My Documents\\GitHub\\exercise\\大三实训\\打飞机\\Plane\\image\\bomb_up.bmp"
+IDB_WINE                BITMAP                  "C:\\Documents and Settings\\k01\\My Documents\\GitHub\\exercise\\大三实训\\打飞机\\Plane\\image\\analeptic.bmp"
+IDB_SPEED_DAWAN         BITMAP                  "C:\\Documents and Settings\\k01\\My Documents\\GitHub\\exercise\\大三实训\\打飞机\\Plane\\image\\dayuan.bmp"
+IDB_SPEED_UP            BITMAP                  "C:\\Documents and Settings\\k01\\My Documents\\GitHub\\exercise\\大三实训\\打飞机\\Plane\\image\\speed_up.bmp"
+IDB_SPEED_DOWN          BITMAP                  "C:\\Documents and Settings\\k01\\My Documents\\GitHub\\exercise\\大三实训\\打飞机\\Plane\\image\\speed_down.bmp"
+IDB_SPEED_SHORTAGE      BITMAP                  "C:\\Documents and Settings\\k01\\My Documents\\GitHub\\exercise\\大三实训\\打飞机\\Plane\\image\\supply_shortage.bmp"
+IDB_BALL_YELLOW         BITMAP                  "C:\\Documents and Settings\\k01\\My Documents\\GitHub\\exercise\\大三实训\\打飞机\\Plane\\image\\ball_yellow.BMP"
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -111,31 +131,9 @@ IDR_MAINFRAME MENU
 BEGIN
     POPUP "文件(&F)"
     BEGIN
-        MENUITEM "新建(&N)\tCtrl+N",              ID_FILE_NEW
-        MENUITEM "打开(&O)...\tCtrl+O",           ID_FILE_OPEN
-        MENUITEM "保存(&S)\tCtrl+S",              ID_FILE_SAVE
-        MENUITEM "另存为(&A)...",                  ID_FILE_SAVE_AS
         MENUITEM SEPARATOR
-        MENUITEM "最近的文件",                       ID_FILE_MRU_FILE1, GRAYED
         MENUITEM SEPARATOR
         MENUITEM "退出(&X)",                      ID_APP_EXIT
-    END
-    POPUP "编辑(&E)"
-    BEGIN
-        MENUITEM "撤消(&U)\tCtrl+Z",              ID_EDIT_UNDO
-        MENUITEM SEPARATOR
-        MENUITEM "剪切(&T)\tCtrl+X",              ID_EDIT_CUT
-        MENUITEM "复制(&C)\tCtrl+C",              ID_EDIT_COPY
-        MENUITEM "粘贴(&P)\tCtrl+V",              ID_EDIT_PASTE
-    END
-    POPUP "视图(&V)"
-    BEGIN
-        MENUITEM "工具栏(&T)",                     ID_VIEW_TOOLBAR
-        MENUITEM "状态栏(&S)",                     ID_VIEW_STATUS_BAR
-    END
-    POPUP "帮助(&H)"
-    BEGIN
-        MENUITEM "关于 Plane(&A)...",             ID_APP_ABOUT
     END
 END
 
@@ -202,13 +200,13 @@ BEGIN
     BEGIN
         BLOCK "080403a8"
         BEGIN
-            VALUE "CompanyName", "TODO: <公司名>"
+            VALUE "CompanyName", "DUODUO"
             VALUE "FileDescription", "TODO: <文件说明>"
             VALUE "FileVersion", "1.0.0.1"
             VALUE "InternalName", "Plane.exe"
             VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。"
             VALUE "OriginalFilename", "Plane.exe"
-            VALUE "ProductName", "TODO: <产品名>"
+            VALUE "ProductName", "三国杀版打飞机"
             VALUE "ProductVersion", "1.0.0.1"
         END
     END

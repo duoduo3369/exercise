@@ -7,7 +7,12 @@
 #include <deque>
 #include "MyPlane.h"
 #include "Enemy.h"
-
+#include "Bomb.h"
+#include "Ball.h"
+#include "Explosion.h"
+#include "PlaneGame.h"
+#include "Text.h"
+#include "Tool.h"
 using namespace std;
 
 
@@ -19,11 +24,18 @@ protected: // 仅从序列化创建
 
 // 属性
 public:
+    
     deque<CEnemy*> enemyArray;
+    deque<CBomb*> bombArray;
+    deque<CBall*> ballArray;
+    deque<CExplosion*> explosionArray;
+    CText outText[OUT_STRINGS];
+    deque<CTool*> toolArray;
     CMyPlane *myPlane;
+    CPlaneGame game;
+    unsigned int backCount;
 // 操作
 public:
-
 // 重写
 public:
 	virtual BOOL OnNewDocument();

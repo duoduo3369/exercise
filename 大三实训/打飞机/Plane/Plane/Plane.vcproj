@@ -186,7 +186,19 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath=".\Ball.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Bomb.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Enemy.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Explosion.cpp"
 				>
 			</File>
 			<File
@@ -207,6 +219,10 @@
 			</File>
 			<File
 				RelativePath=".\PlaneDoc.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\PlaneGame.cpp"
 				>
 			</File>
 			<File
@@ -234,6 +250,34 @@
 				</FileConfiguration>
 			</File>
 			<File
+				RelativePath=".\Text.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Tool.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ToolLife.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ToolSpeedDown.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ToolSpeedUp.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ToolSuperBomb.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\ToolUpBombSize.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\Util.cpp"
 				>
 			</File>
@@ -244,7 +288,19 @@
 			UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}"
 			>
 			<File
+				RelativePath=".\Ball.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Bomb.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Enemy.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Explosion.h"
 				>
 			</File>
 			<File
@@ -268,6 +324,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\PlaneGame.h"
+				>
+			</File>
+			<File
 				RelativePath=".\PlaneView.h"
 				>
 			</File>
@@ -288,6 +348,34 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Text.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Tool.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ToolLife.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ToolSpeedDown.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ToolSpeedUp.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ToolSuperBomb.h"
+				>
+			</File>
+			<File
+				RelativePath=".\ToolUpBombSize.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Util.h"
 				>
 			</File>
@@ -298,11 +386,87 @@
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
 			<File
+				RelativePath="..\image\analeptic.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\image\archery_attack.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\image\archery_attck_big.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\桌面\backgnd.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\image\ball.BMP"
+				>
+			</File>
+			<File
+				RelativePath="..\..\C++实训说明\plane\ball.BMP"
+				>
+			</File>
+			<File
+				RelativePath="..\image\ball_yellow.BMP"
+				>
+			</File>
+			<File
+				RelativePath="..\image\bitmap7.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\C++实训说明\plane\bomb.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\image\bomb.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\image\bomb_left.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\image\bomb_right.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\image\bomb_up.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\image\dayuan.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\image\despeed.bmp"
+				>
+			</File>
+			<File
 				RelativePath="..\..\C++实训说明\plane\enemy.bmp"
 				>
 			</File>
 			<File
+				RelativePath="..\..\C++实训说明\plane\explosion.BMP"
+				>
+			</File>
+			<File
+				RelativePath="..\image\life.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\桌面\logo-zhidao.bmp"
+				>
+			</File>
+			<File
 				RelativePath="..\..\C++实训说明\plane\me.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\image\peach.bmp"
 				>
 			</File>
 			<File
@@ -322,7 +486,35 @@
 				>
 			</File>
 			<File
+				RelativePath="..\image\shu.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\image\speed_down.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\image\speed_up.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\image\superbomb.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\image\supply_shortage.bmp"
+				>
+			</File>
+			<File
 				RelativePath=".\res\Toolbar.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\image\wei.bmp"
+				>
+			</File>
+			<File
+				RelativePath="..\image\wu.bmp"
 				>
 			</File>
 		</Filter>

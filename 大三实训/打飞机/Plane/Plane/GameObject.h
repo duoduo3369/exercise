@@ -19,7 +19,7 @@ public:
 	{
 		return m_ptPos;
 	}
-
+    void Invalidate();
 protected:
 	//加载图像
 	static BOOL LoadImage(CImageList& imgList,UINT bmpID,COLORREF crMask,int cx,int cy,int nInitial);
@@ -27,7 +27,6 @@ protected:
 protected:
 	//物体的位置
 	CPoint  m_ptPos;
-
 
 };
 

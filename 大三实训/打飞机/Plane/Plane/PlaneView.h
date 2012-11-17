@@ -57,6 +57,9 @@ public:
     CBitmap* m_pMemBitmap;
     CBitmap* m_pOldBitmap;
     afx_msg BOOL OnEraseBkgnd(CDC* pDC);
+//    afx_msg void OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags);
+    afx_msg void OnRButtonDown(UINT nFlags, CPoint point);
+    unsigned int count_sepcial;
 };
 
 #ifndef _DEBUG  // PlaneView.cpp 中的调试版本

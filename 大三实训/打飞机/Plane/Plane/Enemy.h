@@ -1,11 +1,14 @@
 #pragma once
 #include "gameobject.h"
+#include "Ball.h"
+#include "Resource.h"
 
 class CEnemy :
     public CGameObject
 {
 public:
     CEnemy(CPoint pos);
+    CEnemy(CPoint pos,int motion);
     ~CEnemy(void);    
     
     BOOL Draw(CDC* pDC,BOOL bPause);
@@ -19,32 +22,38 @@ public:
         return rect;
 	}
 
-	int GetUpDownMontion() const
-	{
-		return m_n_updown_Motion;
-	}
+	int GetVerMontion() const;
+    int GetHorMontion() const;
+    void SetVerMotion(int motion);
+    void SetHorMotion(int motion);
 	//是否可以开火发射子弹
 	BOOL Fired();
+    void Invalidate();
     void Move();
     void Setm_V(int V);
     int Getm_V();
-    void LevelUp(int V);//升级速度增加
     static const int ENEMY_HEIGHT = 35;
+    CBall ball[ENEMY_BALLS];
+    //速度
+	static int m_V;
+    static void LevelUp(int level);
+protected:
+    void SetBallPos();
+    void SetBallV();
+    void SetBallMotion();
 
 private:
-    
 	
 	static CImageList m_Images;
-	int    m_n_updown_Motion;//方向 1->向下 0->停止 -1->向上
-    int    m_n_leftright_Motion; //方向 1->向下 0->停止 -1->向上
+	int    m_nVerMotion;//方向 1->向下 0->停止 -1->向上
+    int    m_nHorMotion; //方向 1->向下 0->停止 -1->向上
 	//图像索引
 	int m_nImgIndex;
-	//速度
-	int m_V;
+	
 	int m_nWait;//发射延时
     //左右移动的宽度
-    double move_leftright_gap;
-    double move_updown_gap;
+    double hor_gap;
+    double ver_gap;
 
 
     //测试用

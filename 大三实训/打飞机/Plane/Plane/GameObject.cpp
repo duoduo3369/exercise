@@ -30,3 +30,8 @@ BOOL CGameObject::LoadImage(CImageList& imgList,UINT bmpID,COLORREF crMask,int c
 	return TRUE;
 }
 
+void CGameObject::Invalidate()
+{
+    m_ptPos.x = -10000;
+    m_ptPos.y = -10000;
+}
