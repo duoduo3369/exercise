@@ -344,7 +344,7 @@ void CPlaneView::OnTimer(UINT_PTR nIDEvent)
         //µ¼µ¯×Óµ¯·¢Éä
         if(GetKeyState(VK_SPACE)<0)
         {
-            if(pDoc->bombArray.size() <= 200 && pDoc->myPlane->IsAlive())
+            if(pDoc->bombArray.size() <= 40 && pDoc->myPlane->IsAlive())
             {
 
                 CBomb *bomb_up_left = new CBomb(pDoc->myPlane->bomb[BOMB_UP_LEFT]);

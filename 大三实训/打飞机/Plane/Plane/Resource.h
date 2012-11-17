@@ -25,7 +25,7 @@
 #define GRADE_BALL                      5
 #define MYPLANE_BOMBS                   8
 #define IDB_SPEED_SHORTAGE              9
-#define BALL_ARRAY_LIMIT                20
+#define BALL_ARRAY_LIMIT                14
 #define GRADE_ENEMY                     50
 #define IDD_ABOUTBOX                    100
 #define IDR_MAINFRAME                   128

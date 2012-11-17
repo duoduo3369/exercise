@@ -22,7 +22,7 @@ int CPlaneGame::GetEnemyLimits() const
 {
     
     unsigned int many = 15 * level;
-    many = many > 100 ? 100 : many;
+    many = many > 45 ? 45 : many;
     return many;
 }
 BOOL CPlaneGame::IsLevelUp()
