@@ -1,24 +1,26 @@
 package experiment._2;
 
-public class Teacher {
-	private String no;
+import java.util.Arrays;
+
+public class Teacher implements Comparable{
+	private int no;
 	private String name;
 	private int age;
 	private String seminary;
 	public Teacher(){
 		
 	}
-	public Teacher(String no,String name,int age,String seminary){
+	public Teacher(int no,String name,int age,String seminary){
 		this.no = no;
 		this.name = name;
 		this.age = age;
 		this.seminary = seminary;
 	}
-	public void setNo(String no){
+	public void setNo(int no){
 		this.no = no;
 	}
 	public String getNO(){
-		return this.no;
+		return Integer.toString(this.no);
 	}
 	public void setName(String name){
 		this.name = name;
@@ -52,10 +54,22 @@ public class Teacher {
 	public String toString(){
 		return "编号为" + this.no + "、姓名为" + this.name +"、年龄为" + this.age + "的" + this.seminary + "学院老师";
 	}
-	
+	public int compareTo(Object other) {
+		Teacher otherTeacher = (Teacher)other;
+		if(this.no == otherTeacher.no){
+			return 0;
+		}
+		else if(this.no < otherTeacher.no){
+			return -1;
+		}
+		else{
+			return 1;
+		}
+		
+	}
 	public static void main(String args[]){
-		Teacher li = new Teacher("李晓峰","1001",20,"信息学院");
-		Teacher zhang = new Teacher("张国庆","1002",20,"信息学院");
+		Teacher li = new Teacher(1001,"李晓峰",20,"信息学院");
+		Teacher zhang = new Teacher(1002,"张国庆",20,"信息学院");
 //		li.setAge(20);
 //		li.setName("李晓峰");
 //		li.setNo("1001");
@@ -67,5 +81,18 @@ public class Teacher {
 		System.out.println(li.equals(zhang));
 		System.out.println(li);
 		System.out.println(zhang);
+		Teacher[] array = new Teacher[2]; 
+		array[0] = zhang;
+		array[1] = li;
+		System.out.println("排序前");
+		for(int i = 0; i < array.length; i++){
+			System.out.println(array[i]);
+		}
+		Arrays.sort(array);
+		System.out.println("排序后");
+		for(int i = 0; i < array.length; i++){
+			System.out.println(array[i]);
+		}
 	}
+	
 }

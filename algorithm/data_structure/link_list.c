@@ -100,6 +100,7 @@ int main()
     }
     ///*/
     ///*
+    next = head->next;
     sort(head);
     while(next)
     {

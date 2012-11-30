@@ -1,4 +1,4 @@
-package experiment._2;
+package experiment;
 
 public class LinkList {
 	

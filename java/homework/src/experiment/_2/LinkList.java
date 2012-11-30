@@ -1,7 +1,6 @@
 package experiment._2;
 
 public class LinkList {
-	
 	public Node head = new Node();
 	private int many = 0;
 	public int size(){
