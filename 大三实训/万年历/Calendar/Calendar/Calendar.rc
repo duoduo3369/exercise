@@ -1,0 +1,152 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DLG_CLOCK DIALOGEX 0, 0, 140, 90
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_DLG_CALENDAR DIALOGEX 0, 0, 158, 294
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "年↑",IDC_BTN_YEARUP,6,237,22,19
+    PUSHBUTTON      "年↓",IDC_BTN_YEARDOWN,29,237,23,19
+    PUSHBUTTON      "月↑",IDC_BTN_MONTHUP,59,237,23,19
+    PUSHBUTTON      "月↓",IDC_BTN_MONTHDOWN,83,237,23,19
+    PUSHBUTTON      "回今天",IDC_BTN_TODAY,112,237,35,20
+    PUSHBUTTON      "×",IDCANCEL,135,271,18,15,BS_FLAT
+    GROUPBOX        "",IDC_STATIC,2,37,154,251
+    GROUPBOX        "",IDC_STATIC,2,191,154,41,WS_GROUP
+    GROUPBOX        "",IDC_STATIC,2,27,154,14,WS_GROUP
+    GROUPBOX        "",IDC_STATIC,2,189,154,43,WS_GROUP
+    GROUPBOX        "",IDC_STATIC,2,187,154,45,WS_GROUP
+    GROUPBOX        "",IDC_STATIC,2,185,154,47,WS_GROUP
+    GROUPBOX        "",IDC_STATIC,2,0,154,32
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DLG_CLOCK, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        RIGHTMARGIN, 138
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 89
+    END
+
+    IDD_DLG_CALENDAR, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 154
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 290
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON                    "icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU MENU 
+BEGIN
+    POPUP "弹出"
+    BEGIN
+        MENUITEM "日历",                          ID_CALENDAR
+        MENUITEM "换肤",                          ID_40007
+        POPUP "整点报时"
+        BEGIN
+            MENUITEM "开启",                          ID_40009
+            MENUITEM "关闭",                          ID_40010
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "退出",                          ID_EXIT
+    END
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
