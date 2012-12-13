@@ -21,7 +21,7 @@ public class StackTest extends TestCase {
 		stack.push(3);
 		stack.push(2);
 		Assert.assertTrue(stack.isEmpty() == false);
-		Assert.assertTrue((int)stack.getTop() == 2);
+		Assert.assertTrue(((Integer)stack.getTop()) == 2);
 		System.out.println("第1次弹栈：" + stack.pop());
 		Assert.assertTrue(stack.isEmpty() == false);
 		System.out.println("第2次弹栈：" + stack.pop());

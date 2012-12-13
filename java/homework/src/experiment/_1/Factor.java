@@ -1,7 +1,6 @@
 package experiment._1;
 import java.math.BigInteger;
 
-
 public class Factor {
 	long factor(long number){
 		long result = 1;

@@ -2,9 +2,6 @@ package experiment._4;
 
 public class Problem_3 {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		int N = 5;
 		int[][] matric = new int[N][];

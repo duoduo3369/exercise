@@ -17,7 +17,7 @@ public class PrimeNumber {
 		int i,n = 100;
 		for(i = 2; i < n; ++i){
 			if(pnumber.isPrime(i)){
-				System.out.println(i);
+				System.out.print(i+" ");
 			}
 		}
 
