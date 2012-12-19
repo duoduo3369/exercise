@@ -23,6 +23,18 @@ public class Student implements Serializable{
 			System.out.println(iterator.next());
 		}
 	}
+	public int hashCode(){
+		if(no == null){
+			return super.hashCode();
+		}
+		int length = no.length();
+		char ch;
+		int result = 0;
+		for(int i = 0; i < length; i++){
+			result += no.charAt(i);
+		}
+		return result;
+	}
 	public String getNo() {
 		return no;
 	}

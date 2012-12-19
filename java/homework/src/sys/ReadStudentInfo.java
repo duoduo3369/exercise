@@ -5,9 +5,11 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.HashSet;
 
 public class ReadStudentInfo {
-	public static Object read() {
+	public static HashSet<Student> read() {
+		HashSet<Student> studentSet = new HashSet<Student>();
 		try {
 			FileInputStream fin = new FileInputStream("stdentinfo.ds");
 			ObjectInputStream oin = new ObjectInputStream(fin);
@@ -15,12 +17,11 @@ public class ReadStudentInfo {
 			while ((obj = oin.readObject()) != null) {
 				if (obj instanceof Student) {
 					Student s = (Student) obj;
-					System.out.println(s);
-					s.printMajorScores();
+					studentSet.add(s);
 				}
 			}
 			oin.close();
-			return obj;
+			return studentSet;
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (EOFException e) {
@@ -30,6 +31,6 @@ public class ReadStudentInfo {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return studentSet;
 	}
 }
