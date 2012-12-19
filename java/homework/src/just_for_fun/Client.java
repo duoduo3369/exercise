@@ -1,3 +1,5 @@
+package just_for_fun;
+
 import java.net.*;
 import java.io.*;
 

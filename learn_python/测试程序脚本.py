@@ -7,7 +7,7 @@ import threading
 import subprocess
 import time
 import shlex
-
+import ctypes
 
 #Producer thread
 
@@ -55,6 +55,7 @@ class Consumer(threading.Thread):
                 stdout = subprocess.PIPE,
                 stderr = subprocess.PIPE, shell = False)
                 print pipe.stdout.read()
+                ctypes.windll.kernel32.TerminateProcess(int(pipe._handle), -1)
                 #print  "output: %s" % (val)
                 con.notify()
             con.release()
@@ -77,7 +78,7 @@ def main():
 
 
 con = threading.Condition()
-exepath = "F:/aptana_work/add.exe"
+exepath = "add.exe"
 if __name__ == '__main__':
 
     main()
