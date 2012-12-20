@@ -1,7 +1,9 @@
 package sys;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public class Statistic {
@@ -14,10 +16,12 @@ public class Statistic {
 		statisticMathScore.setStatisedTime();
 		while(iteratorStudent.hasNext()){
 			Student student = iteratorStudent.next();
-			HashSet<MajorScore> majorSet = student.getMajorScoreSet();
-			Iterator<MajorScore> iteratorMajorSet = majorSet.iterator();
+			HashMap<String, MajorScore> majorMap = student.getMajorScoreMap();
+			Iterator<Entry<String, MajorScore>> iteratorMajorSet = majorMap.entrySet().iterator();
+			//Iterator<MajorScore> iteratorMajorSet = majorSet.iterator();
 			while(iteratorMajorSet.hasNext()){
-				MajorScore ms = iteratorMajorSet.next();
+				Entry<String, MajorScore> entry = iteratorMajorSet.next();
+				MajorScore ms = entry.getValue();
 				String className = ms.getClass().getName();
 				switch(className){
 				case "sys.MathScore":{
