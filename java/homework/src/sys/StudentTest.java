@@ -1,31 +1,35 @@
 package sys;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 
 public class StudentTest {
 
 	public static void main(String[] args) {
-		Student a = new Student("101","abc");
-		Student b = new Student("101","bbb");
 		HashSet<Student> set = new HashSet<Student>();
 		
-		System.out.println(a.equals(b));
+		Student a = new Student("101","¿Óπ„");
 		MathScore ms = new MathScore(80, a); 
-		MathScore ms2 = new MathScore(212, a); 
-		System.out.println(ms.equals(ms2));
-		a.addMajorScore(ms);
-		a.addMajorScore(ms2);
-		///*
 		SoftWareScore ss = new SoftWareScore(79,a);
+		a.addMajorScore(ms);
 		a.addMajorScore(ss);
-		//*/
-		//a.printMajorScores();
+		
+		Student b = new Student("102","œƒ∫Ó‘®");
+		MathScore ms2 = new MathScore(212, b); 
+		b.addMajorScore(ms2);
+		
+		Student c = new Student("103","’≈Ú¢");
+		MathScore ms3 = new MathScore(90.1,c);
+		c.addMajorScore(ms3);
+		
+		MathScore msa = new MathScore(800, a); 
+		a.changeMajorScore(msa);
 		set.add(a);
 		set.add(b);
+		set.add(c);
 		SaveStudentInfo.save(set);
-		System.out.println("========");
-		
 		set = ReadStudentInfo.read();
 		Iterator<Student> iterator = set.iterator();
 		while(iterator.hasNext()){
@@ -33,5 +37,12 @@ public class StudentTest {
 			System.out.println("!!" + studentInSet);
 			studentInSet.printMajorScores();
 		}
+		
+		/*
+		Statistic statistic = new Statistic();
+		statistic.statistic(set);
+		statistic.statisticMathScore.printStudent();
+		*/
+		
 	}
 }

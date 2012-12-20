@@ -15,4 +15,5 @@ public class MathScore extends MajorScore {
 	public String toString(){
 		return courseName + ": " + score;
 	}
+	
 }

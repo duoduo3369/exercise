@@ -17,6 +17,23 @@ public class Student implements Serializable{
 	public void addMajorScore(MajorScore ms){
 		this.grades.add(ms);
 	}
+	public boolean changeMajorScore(MajorScore ms){
+		if(deleteMajorScore(ms)){
+			grades.add(ms);
+			return true;
+		}
+		return false;
+	}
+	public boolean deleteMajorScore(MajorScore ms){
+		if(grades.contains(ms)){
+			grades.remove(ms);
+			return true;
+		}
+		return false;
+	}
+	public HashSet<MajorScore> getMajorScoreSet(){
+		return grades;
+	}
 	public void printMajorScores(){
 		Iterator<MajorScore> iterator = grades.iterator();
 		while(iterator.hasNext()){
